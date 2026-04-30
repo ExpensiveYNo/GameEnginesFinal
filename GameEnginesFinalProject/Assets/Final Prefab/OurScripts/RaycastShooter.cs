@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Collections;
 
 public class RaycastShooter : MonoBehaviour
@@ -24,10 +25,11 @@ public class RaycastShooter : MonoBehaviour
 
     [Header("References")]
     public Camera playerCamera;
-
     public int currentAmmo;
+
     private float nextFireTime = 0f;
     private LineRenderer lineRenderer;
+    private bool isFiring;   // tracks if Fire button is held
 
     void Awake()
     {
@@ -39,7 +41,6 @@ public class RaycastShooter : MonoBehaviour
     {
         if (playerCamera == null)
             playerCamera = Camera.main;
-
         SetupLineRenderer();
     }
 
@@ -56,9 +57,35 @@ public class RaycastShooter : MonoBehaviour
         lineRenderer.endColor = new Color(tracerColor.r, tracerColor.g, tracerColor.b, 0f);
     }
 
+    //The weapon kept firing after just one input so I switched to checking the mouse button state directly in Update instead of relying on the Input System's event method.
+    //This way, holding down the fire button will continuously fire as long as the cursor is locked and ammo is available.
+    //public void OnFire(InputValue value)
+    //{
+    //    if (Cursor.lockState != CursorLockMode.Locked)
+    //        return;
+
+    //    isFiring = value.isPressed;
+    //}
+
+    //public void OnFire(InputValue value)
+    //{
+    //    Debug.Log($"OnFire called - isPressed: {value.isPressed}, CursorLocked: {Cursor.lockState == CursorLockMode.Locked}");
+
+    //    if (Cursor.lockState != CursorLockMode.Locked)
+    //    {
+    //        Debug.Log("Fire blocked - cursor not locked");
+    //        return;
+    //    }
+
+    //    isFiring = value.isPressed;
+    //    Debug.Log($"isFiring set to: {isFiring}");
+
+
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && currentAmmo > 0)
+        bool firing = Mouse.current.leftButton.isPressed && Cursor.lockState == CursorLockMode.Locked;
+
+        if (firing && Time.time >= nextFireTime && currentAmmo > 0)
         {
             nextFireTime = Time.time + fireRate;
             currentAmmo--;
@@ -66,7 +93,7 @@ public class RaycastShooter : MonoBehaviour
         }
     }
 
-    // Called by ammo collectibles 
+    // Called by ammo collectibles
     public void RefillAmmo(int amount = -1)
     {
         currentAmmo = (amount < 0) ? maxAmmo : Mathf.Min(currentAmmo + amount, maxAmmo);
@@ -80,8 +107,8 @@ public class RaycastShooter : MonoBehaviour
 
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         Vector3 startPoint = muzzlePoint != null ? muzzlePoint.position : playerCamera.transform.position;
-
         Vector3 endPoint;
+
         if (Physics.Raycast(ray, out RaycastHit hit, range, hitLayers))
         {
             endPoint = hit.point;

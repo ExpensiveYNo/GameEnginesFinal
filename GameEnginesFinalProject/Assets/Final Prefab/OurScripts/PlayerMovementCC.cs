@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovementCC : MonoBehaviour
 {
@@ -10,31 +11,43 @@ public class PlayerMovementCC : MonoBehaviour
     private Vector3 velocity;
     private bool canJump; // tracks if player can jump
 
+    private Vector2 moveInput;
+    private bool jumpPressed;
+
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        canJump = true; // start able to jump
+        canJump = true;
+    }
+
+    public void OnMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
+    }
+
+    public void OnJump(InputValue value) //Converted to use InputValue for consistency with new Input System
+    {
+        if (value.isPressed)
+            jumpPressed = true;
     }
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
 
         // Jump only if allowed and grounded
-        if (Input.GetButtonDown("Jump") && cc.isGrounded && canJump)
+        if (jumpPressed && cc.isGrounded && canJump)
         {
             velocity.y = Mathf.Sqrt(jump * -2f * gravity);
-            canJump = false; // prevent double jump
+            canJump = false;
         }
+        jumpPressed = false; // consume the press each frame
 
         // Reset jump when touching the ground
         if (cc.isGrounded && velocity.y <= 0)
         {
             canJump = true;
-            velocity.y = -2f; // stick to ground
+            velocity.y = -2f;
         }
 
         // Apply gravity
