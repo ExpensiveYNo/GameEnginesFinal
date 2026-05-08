@@ -196,12 +196,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   navAgent: {fileID: 8151874258474888559}
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4623472564953386555, guid: cd82e0963df11ee4c9c542bac4887748, type: 3}
   firePoint: {fileID: 7420036979557629734}
   projectilePrefab: {fileID: 7288597818042516332, guid: 06a0e92a55cd22742b70667d8df24f5b, type: 3}
   terrainLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 8
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -290,12 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootDrop
   lootTable:
-  - prefab: {fileID: 3913570990901684262, guid: 19850037c917a1c48ad9916b5cbff60d, type: 3}
-    chance: 0.1
-  - prefab: {fileID: 1825870777587358, guid: 9568f15e6607c70469b5b2657c7cd0b3, type: 3}
-    chance: 0.2
-  - prefab: {fileID: 3497553152194850393, guid: dd5b992862e8bba4faba01893d3e178d, type: 3}
-    chance: 0.2
   - prefab: {fileID: 7135617792112562572, guid: 162a32f50e20262448adf32ddb1984e9, type: 3}
     chance: 1
   dropHeightOffset: 0.5
