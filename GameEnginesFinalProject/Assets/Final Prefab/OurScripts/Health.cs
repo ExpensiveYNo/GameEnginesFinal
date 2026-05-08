@@ -70,6 +70,7 @@ public class Health : MonoBehaviour
         {
             Debug.Log($"{gameObject.name} died.");
             onDeath?.Invoke();
+            EnemyManager.Instance.EnemyDefeated();
             Destroy(gameObject);
         }
     }
