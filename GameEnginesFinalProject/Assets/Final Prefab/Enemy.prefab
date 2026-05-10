@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 5939374124128006337}
   - component: {fileID: 1148864271339396401}
   - component: {fileID: 8151874258474888559}
-  - component: {fileID: 1573599550818296042}
-  - component: {fileID: 4527504012890410697}
   - component: {fileID: 6226676728324933929}
   - component: {fileID: 4359263657909281091}
   - component: {fileID: -7510188857682237089}
@@ -201,16 +199,17 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7288597818042516332, guid: 06a0e92a55cd22742b70667d8df24f5b, type: 3}
   terrainLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 8
-  patrolRadius: 30.26
+    m_Bits: 1
+  patrolRadius: 25
+  minPatrolDistance: 17.5
   attackCooldown: 1
-  forwardShotForce: 10
+  forwardShotForce: 5
   verticalShotForce: 0
-  visionRange: 10.1
-  engagementRange: 5.52
+  visionRange: 15
+  engagementRange: 7
 --- !u!195 &8151874258474888559
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -233,50 +232,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &1573599550818296042
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6094909205863143164}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!135 &4527504012890410697
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6094909205863143164}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 10
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &6226676728324933929
 MonoBehaviour:
   m_ObjectHideFlags: 0
