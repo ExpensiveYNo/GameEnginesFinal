@@ -210,15 +210,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914852203655400382}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 270ee3aecd55b7a43a81e88eb3540078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootDrop
   lootTable:
-  - prefab: {fileID: 7135617792112562572, guid: 162a32f50e20262448adf32ddb1984e9, type: 3}
+  - prefab: {fileID: 3197162553732212468, guid: 8c962243a4297954da64a42cfd3c8a54, type: 3}
     chance: 1
-  dropHeightOffset: 0.5
+  dropHeightOffset: 3
+  customSpawnPoint: {fileID: 0}
 --- !u!114 &1534268327427036095
 MonoBehaviour:
   m_ObjectHideFlags: 0

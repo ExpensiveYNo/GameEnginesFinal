@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemyBullet
   - Base
+  - Loot
   layers:
   - Default
   - TransparentFX

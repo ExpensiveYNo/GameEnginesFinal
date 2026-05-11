@@ -39,4 +39,11 @@ public class Base : MonoBehaviour
         Debug.Log("Base destroyed! Game over.");
         LevelManager.instance.GameOver();
     }
+
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        UpdateUI();
+        Debug.Log($"Base healed {amount} HP. HP: {currentHealth}/{maxHealth}");
+    }
 }

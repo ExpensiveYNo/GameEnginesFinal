@@ -47,6 +47,9 @@ public class EnemyLaneAI : MonoBehaviour
     {
         if (assignedLane == null || assignedLane.waypoints.Length == 0) return;
 
+        if (baseTransform != null)
+            Debug.Log($"Distance to base: {Vector3.Distance(transform.position, baseTransform.position)}, Attack range: {attackRange}");
+
         // Check if close enough to base to start attacking
         if (baseTransform != null && Vector3.Distance(transform.position, baseTransform.position) <= attackRange)
         {
@@ -74,7 +77,9 @@ public class EnemyLaneAI : MonoBehaviour
 
     void AttackBase()
     {
-// Face the direction of travel (lock out vertical/pitch rotation)
+
+        Debug.Log($"Attacking base, timer: {attackTimer}");
+        // Face the direction of travel (lock out vertical/pitch rotation)
         Vector3 direction = (baseTransform.position - transform.position);
         direction.y = 0f; // Disable vertical component so rotation only occurs around Y
         if (direction.sqrMagnitude > 0.0001f)
