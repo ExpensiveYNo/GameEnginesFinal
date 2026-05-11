@@ -10,7 +10,7 @@ public class RaycastShooter : MonoBehaviour
     public float fireRate = 0.2f;
     public float range = 100f;
     public int damage = 25;
-    public int maxAmmo = 30;
+   // public int maxAmmo = 30;
     public LayerMask hitLayers;
 
     [Header("Effects")]
@@ -25,7 +25,7 @@ public class RaycastShooter : MonoBehaviour
 
     [Header("References")]
     public Camera playerCamera;
-    public int currentAmmo;
+   // public int currentAmmo;
 
     private float nextFireTime = 0f;
     private LineRenderer lineRenderer;
@@ -34,7 +34,7 @@ public class RaycastShooter : MonoBehaviour
     void Awake()
     {
         instance = this;
-        currentAmmo = maxAmmo;
+        //currentAmmo = maxAmmo;
     }
 
     void Start()
@@ -85,20 +85,20 @@ public class RaycastShooter : MonoBehaviour
     {
         bool firing = Mouse.current.leftButton.isPressed && Cursor.lockState == CursorLockMode.Locked;
 
-        if (firing && Time.time >= nextFireTime && currentAmmo > 0)
+        if (firing && Time.time >= nextFireTime) //&& currentAmmo > 0)
         {
             nextFireTime = Time.time + fireRate;
-            currentAmmo--;
+           // currentAmmo--;
             Shoot();
         }
     }
 
     // Called by ammo collectibles
-    public void RefillAmmo(int amount = -1)
-    {
-        currentAmmo = (amount < 0) ? maxAmmo : Mathf.Min(currentAmmo + amount, maxAmmo);
-        Debug.Log($"Ammo refilled! Current ammo: {currentAmmo}/{maxAmmo}");
-    }
+    //public void RefillAmmo(int amount = -1)
+    //{
+    //    currentAmmo = (amount < 0) ? maxAmmo : Mathf.Min(currentAmmo + amount, maxAmmo);
+    //    Debug.Log($"Ammo refilled! Current ammo: {currentAmmo}/{maxAmmo}");
+    //}
 
     void Shoot()
     {

@@ -18,6 +18,7 @@ public class LaneWaveSpawner : MonoBehaviour
     private int currentWave = 0;
     private int totalEnemiesSpawned = 0;
 
+
     void Start()
     {
         StartCoroutine(WaveLoop());
@@ -59,10 +60,22 @@ public class LaneWaveSpawner : MonoBehaviour
         }
 
         // Pick a random lane spawn point and random enemy prefab
-        Transform spawnPoint = laneSpawnPoints[Random.Range(0, laneSpawnPoints.Length)];
+        //Transform spawnPoint = laneSpawnPoints[Random.Range(0, laneSpawnPoints.Length)];
+
+        // Pick ONE random lane index
+        int laneIndex = Random.Range(0, laneSpawnPoints.Length);
+
+        // Use SAME lane index for both spawn point and lane assignment
+        Transform spawnPoint = laneSpawnPoints[laneIndex];
+        LaneManager.Lane selectedLane = LaneManager.instance.lanes[laneIndex];
         GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
 
         Vector3 spawnPos = spawnPoint.position + Vector3.up * spawnHeightOffset;
-        Instantiate(prefab, spawnPos, spawnPoint.rotation);
+        GameObject enemy = Instantiate(prefab, spawnPos, spawnPoint.rotation);
+        EnemyLaneAI enemyAI = enemy.GetComponent<EnemyLaneAI>();
+        if (enemyAI != null)
+        {
+            enemyAI.assignedLane = selectedLane;
+        }
     }
 }

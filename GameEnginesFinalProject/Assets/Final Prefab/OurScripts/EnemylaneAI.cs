@@ -7,20 +7,25 @@ public class EnemyLaneAI : MonoBehaviour
     public float waypointArrivalDistance = 0.5f;    // How close to get before moving to next waypoint
 
     [Header("Attack Settings")]
-    public float attackRange = 2f;                  // How close to the base before stopping and attacking
+    public float attackRange = 5f;                  // How close to the base before stopping and attacking
     public float attackDamage = 10f;                // Damage dealt to base per tick
     public float attackInterval = 1f;               // Seconds between damage ticks
 
-    private LaneManager.Lane assignedLane;
+    public LaneManager.Lane assignedLane;
     private int currentWaypointIndex = 0;
     private bool isAttackingBase = false;
     private float attackTimer = 0f;
     private Transform baseTransform;
 
+    public void SetLane(LaneManager.Lane lane)
+    {
+        assignedLane = lane;
+    }
+
     void Start()
     {
-        // Grab a random lane from the LaneManager
-        assignedLane = LaneManager.instance.GetRandomLane();
+        //// Grab a random lane from the LaneManager
+        //assignedLane = LaneManager.instance.GetRandomLane();
 
         // Find the base
         GameObject baseObj = GameObject.FindWithTag("Base");
@@ -53,9 +58,10 @@ public class EnemyLaneAI : MonoBehaviour
         Transform target = assignedLane.waypoints[currentWaypointIndex];
         transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
-        // Face the direction of travel
-        Vector3 direction = (target.position - transform.position).normalized;
-        if (direction != Vector3.zero)
+        // Face the direction of travel (lock out vertical/pitch rotation)
+        Vector3 direction = (target.position - transform.position);
+        direction.y = 0f; // Disable vertical component so rotation only occurs around Y
+        if (direction.sqrMagnitude > 0.0001f)
             transform.rotation = Quaternion.LookRotation(direction);
 
         // Advance to next waypoint on arrival
@@ -68,10 +74,11 @@ public class EnemyLaneAI : MonoBehaviour
 
     void AttackBase()
     {
-        // Face the base while attacking
-        if (baseTransform != null)
+// Face the direction of travel (lock out vertical/pitch rotation)
+        Vector3 direction = (baseTransform.position - transform.position);
+        direction.y = 0f; // Disable vertical component so rotation only occurs around Y
+        if (direction.sqrMagnitude > 0.0001f)
         {
-            Vector3 direction = (baseTransform.position - transform.position).normalized;
             transform.rotation = Quaternion.LookRotation(direction);
         }
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 11025654620500524}
   - component: {fileID: 640798014146392189}
   - component: {fileID: 2300788505392854276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyRagdoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 448
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1

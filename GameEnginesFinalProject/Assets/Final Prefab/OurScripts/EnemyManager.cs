@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using TMPro; // remove if you're using legacy Text
 
 public class EnemyManager : MonoBehaviour
@@ -12,9 +13,12 @@ public class EnemyManager : MonoBehaviour
     [Header("UI References")]
     public GameObject winPanel;       // drag your Win UI panel here
     public TMP_Text counterText;      // drag your counter Text here
+    public GameObject alertTextPanel; // drag your alert Text panel here
+    public float alertDisplayTime = 5f;
 
     private int enemiesDefeated = 0;
 
+    
     void Awake()
     {
         Instance = this;
@@ -22,6 +26,8 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
+        alertTextPanel.SetActive(false);
+        ShowPanel();
         winPanel.SetActive(false);
         UpdateUI();
     }
@@ -46,5 +52,17 @@ public class EnemyManager : MonoBehaviour
     {
         winPanel.SetActive(true);
         Time.timeScale = 0f; // pause the game (optional)
+    }
+
+    public void ShowPanel()
+    {
+        StartCoroutine(HidePanelAfterDelay());
+    }
+
+    private IEnumerator HidePanelAfterDelay()
+    {
+        alertTextPanel.SetActive(true); // Show the panel
+        yield return new WaitForSeconds(alertDisplayTime); // Wait
+        alertTextPanel.SetActive(false); // Hide the panel
     }
 }
