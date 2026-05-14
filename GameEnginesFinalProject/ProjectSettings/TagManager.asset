@@ -7,6 +7,7 @@ TagManager:
   - enemyBullet
   - Base
   - Loot
+  - Battery
   layers:
   - Default
   - TransparentFX
