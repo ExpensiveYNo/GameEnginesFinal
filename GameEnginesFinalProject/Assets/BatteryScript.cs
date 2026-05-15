@@ -10,7 +10,7 @@ public class Battery : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             count++;
-
+Debug.Log(count);
             if (count >= 50)
                 ready = true;
 

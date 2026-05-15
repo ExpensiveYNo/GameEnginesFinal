@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WallInteract : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class WallInteract : MonoBehaviour
         {
             pressEText.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
                 gameObject.SetActive(false);
             }
