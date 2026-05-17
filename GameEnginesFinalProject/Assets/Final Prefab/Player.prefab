@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8828716949119010333}
   - component: {fileID: 4556007521411719354}
   - component: {fileID: 6144286645368908460}
+  - component: {fileID: 717237877079778534}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -176,7 +177,6 @@ MonoBehaviour:
   fireRate: 0.7
   range: 100
   damage: 25
-  maxAmmo: 30
   hitLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -187,7 +187,6 @@ MonoBehaviour:
   tracerWidth: 0.2
   tracerColor: {r: 0.2509804, g: 0.65882355, b: 0.23137257, a: 1}
   playerCamera: {fileID: 5147524161568165261}
-  currentAmmo: 0
 --- !u!65 &8828716949119010333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -262,6 +261,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 5147524161568165261}
+--- !u!114 &717237877079778534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777330048410372529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e9b4ec96fb5be4fa3c2f8722cca3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
 --- !u!1 &7397978380947489154
 GameObject:
   m_ObjectHideFlags: 0
