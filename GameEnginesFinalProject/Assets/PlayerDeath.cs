@@ -27,6 +27,8 @@ public class PlayerDeath : MonoBehaviour
 
         if (deathScreen != null)
             deathScreen.SetActive(true);
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
     }
 
     public void Retry()
