@@ -5,6 +5,8 @@ public class Level3LevelManager : MonoBehaviour
 {
     public static Level3LevelManager instance;
 
+    public bool isGameOver = false;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -13,7 +15,8 @@ public class Level3LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0f;
+        isGameOver = true;
+        //Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -24,6 +27,7 @@ public class Level3LevelManager : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("Restart pressed");
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

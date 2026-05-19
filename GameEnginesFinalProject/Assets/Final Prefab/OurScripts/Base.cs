@@ -37,7 +37,7 @@ public class Base : MonoBehaviour
     void BaseDestroyed()
     {
         Debug.Log("Base destroyed! Game over.");
-        LevelManager.instance.GameOver();
+        Level3LevelManager.instance.GameOver();
     }
 
     public void Heal(float amount)

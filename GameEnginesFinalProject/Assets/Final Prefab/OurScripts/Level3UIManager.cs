@@ -18,11 +18,13 @@ public class Level3UIManager : MonoBehaviour
     // Wire these to your buttons in the Inspector
     public void OnRestartPressed()
     {
+        Time.timeScale = 1f;
         Level3LevelManager.instance.Restart();
     }
 
     public void OnMainMenuPressed()
     {
+        Time.timeScale = 1f;
         Level3LevelManager.instance.GoToMainMenu();
     }
 }
