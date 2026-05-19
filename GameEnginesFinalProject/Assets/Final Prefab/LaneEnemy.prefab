@@ -219,6 +219,8 @@ MonoBehaviour:
   lootTable:
   - prefab: {fileID: 3197162553732212468, guid: 8c962243a4297954da64a42cfd3c8a54, type: 3}
     chance: 0.16
+  - prefab: {fileID: 6810373777668713936, guid: 2ddfaafb32ba9814caa444526ab07688, type: 3}
+    chance: 0.16
   dropHeightOffset: 3
   customSpawnPoint: {fileID: 0}
 --- !u!114 &1534268327427036095

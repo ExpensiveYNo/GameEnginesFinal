@@ -24,7 +24,7 @@ public class CameraControllerFPS : MonoBehaviour
     void Update()
     {
         // Re-lock cursor if player clicks while it's unlocked, doesn't fire weapon
-        if (Mouse.current.leftButton.wasPressedThisFrame && Cursor.lockState != CursorLockMode.Locked)
+        if (Mouse.current.leftButton.wasPressedThisFrame && Cursor.lockState != CursorLockMode.Locked && !Level3LevelManager.instance.isGameOver)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
