@@ -11,7 +11,7 @@ public class Battery : MonoBehaviour
         {
             count++;
 Debug.Log(count);
-            if (count >= 50)
+            if (count >=50)
                 ready = true;
 
             Destroy(gameObject);

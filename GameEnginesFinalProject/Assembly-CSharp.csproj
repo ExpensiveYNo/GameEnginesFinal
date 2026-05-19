@@ -62,22 +62,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\lv2 sSTUFF\BATorSPIN1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Retry.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\PlayerDeath.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\KeyHubScript.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\FireRatePickup.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\BaseHealPickup.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\Door2Movement.cs" />
+    <Compile Include="Assets\WallScript.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\AmmoHub.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\lv2 sSTUFF\Collectible.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\HealthHud.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\Base.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\UIManager.cs" />
+    <Compile Include="Assets\ButtonPP.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\EnemylaneAI.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\StateManager.cs" />
@@ -90,6 +96,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\MainMenuScript.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\EnemySpawner.cs" />
+    <Compile Include="Assets\lv2 sSTUFF\PlayerHealth.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\NewSceneChanger.cs" />
@@ -99,6 +106,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\lv2 sSTUFF\Lv2EnemyAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -109,9 +117,13 @@
     <Compile Include="Assets\Final Prefab\OurScripts\hitFlash.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\PlayerMovementCC.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\SimpleCollectableScript.cs" />
+    <Compile Include="Assets\UNLOCKmouse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Final Prefab\OurScripts\Level3UIManager.cs" />
+    <Compile Include="Assets\Final Prefab\OurScripts\LevelTransition.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\EnemyRagdollScript.cs" />
+    <Compile Include="Assets\lv2 sSTUFF\Enemy BITE.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\CollectableSpawnScript.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\LaneManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -120,18 +132,20 @@
     <Compile Include="Assets\Final Prefab\OurScripts\LevelManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\BatteryScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\KillPlane.cs" />
+    <Compile Include="Assets\Final Prefab\OurScripts\Level3LevelManager.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\Enemy_Bullet.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\LootDrop.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\CoinScore.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\Open_Close_Animation.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\LaneWaveSpawner.cs" />
+    <Compile Include="Assets\ButtonPress.cs" />
     <Compile Include="Assets\Final Prefab\OurScripts\ProximityLightController.cs" />
-    <Compile Include="Assets\BATorSPIN1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

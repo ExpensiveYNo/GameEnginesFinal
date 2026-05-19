@@ -34,11 +34,16 @@ public class EnemyBite : MonoBehaviour
 
     void Die()
     {
+        if (dead) return;
+
         dead = true;
 
         Time.timeScale = 0f;
 
         if (deathScreen != null)
             deathScreen.SetActive(true);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

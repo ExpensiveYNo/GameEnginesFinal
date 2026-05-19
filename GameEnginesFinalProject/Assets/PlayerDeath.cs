@@ -29,6 +29,7 @@ public class PlayerDeath : MonoBehaviour
             deathScreen.SetActive(true);
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
+
     }
 
     public void Retry()
@@ -40,6 +41,6 @@ public class PlayerDeath : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Level1");
     }
 }
